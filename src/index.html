@@ -6,19 +6,57 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Update your description here" />
-	<title>Update your title here</title>
+	<title>Curious Words</title>
 	<!--
 		This is where you should link your CSS file.
 	-->
+	<link href="src/styles.css" rel="stylesheet">
 </head>
 
 <body>
 	<main class="content-container">
-		<h1>Welcome to your final project!</h1>
+		<h1>
+			In 2018, I started writing down every word that I’d never heard before.
+		</h1>
+		<h2>Now, in 2024, I have 305 words.
+			<br>Here’s a visual exploration of that list.
+		</h2>
+
+<!--Code on how to make accordion menu taken from w3schools.com (https://www.w3schools.com/howto/howto_js_accordion.asp)-->
+		<div class="accordion menu">
+			<button class="accordion">EXPLORE BY OBSCURITY</button>
+			<div class="panel">
+				<p>common</p>
+				<p>uncommon</p>
+				<p>obscure</p>
+				<p>rare</p>
+			</div>
+
+			<button class="accordion">EXPLORE BY PART OF SPEECH</button>
+			<div class="panel">
+				<p>noun</p>
+				<p>adjective</p>
+				<p>verb</p>
+				<p>adverb</p>
+			</div>
+
+			<button class="accordion">EXPLORE BY YEAR FOUND</button>
+			<div class="panel">
+				<p>2018</p>
+				<p>2019</p>
+				<p>2020</p>
+				<p>2021</p>
+				<p>2022</p>
+				<p>2023</p>
+				<p>2024</p>
+			</div>
+		</div>
+
 	</main>
 	<!--
 		This is where you should link your JS file.
 	-->
+	<script src="js/scripts.js"></script>
 </body>
 
 </html>
