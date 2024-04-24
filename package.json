@@ -23,7 +23,8 @@
     "lint": "npm run lint:html",
     "fix": "stylelint --fix \"src/**/*.css\" && chalk green --no-stdin \"✓ Attempted to automatically fix CSS errors\n\" && echo \"\nAll set! Run 'npm run lint' to check for errors \nthat need to be fixed manually.\n\"",
     "deploy": "gh-pages -d src",
-    "test": "npm run lint && echo \"Checking assignment requirements...\" && jest --silent=false && chalk green --no-stdin \"✓ All tests passed. Nice work!\""
+    "test": "npm run lint && echo \"Checking assignment requirements...\" && jest --silent=false && chalk green --no-stdin \"✓ All tests passed. Nice work!\"",
+	 "builddataset": "node builddataset.js"
   },
   "devDependencies": {
     "chalk-cli": "^5.0.1",

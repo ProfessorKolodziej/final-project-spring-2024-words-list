@@ -25,6 +25,25 @@ to help you out.
 	}
 }
 
+.content-container {
+	display: flex;
+	flex-direction: row;
+	height: 100vh;
+
+}
+
+.page-section {
+	width: 50%;
+	height: 100%;
+	margin: auto;
+}
+
+button {
+	font-family: "henriette-compressed", serif;
+	font-weight: 400;
+	font-style: italic;
+}
+
 .panel {
 	padding: 0 18px;
 	background-color: white;
@@ -33,3 +52,54 @@ to help you out.
 	transition: max-height 0.2s ease-out;
  }
 
+
+
+ .accordion {
+	width: 100%;
+ }
+
+ .accordion-item {
+	background-color: #fff;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+ }
+
+ .accordion-header {
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+ }
+
+ .accordion-content {
+	/*display: none; */
+	margin: 10px;
+	height: 0px;
+	transition: height 0.5s ease;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+ }
+
+ .icon {
+	font-size: 20px;
+	margin-left: auto;
+	transform: rotate(90deg);
+	transition: all 0.2s ease;
+ }
+
+ .open .icon {
+	transform: rotate(0);
+ }
+
+ .accordion-option {
+	margin-bottom: 20px;
+	text-decoration: none;
+ }
+
+ .accordion-option a:hover {
+	color: #FF00FF;
+ }
