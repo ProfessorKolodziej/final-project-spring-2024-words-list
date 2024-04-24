@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -17,18 +16,16 @@
 <body>
 <main class="content-container">
 	<div class="page-section">
-		<h1>These are youre results amsdsal</h1>
-		<h2>sdamkdsal dmaskla ndsajlkdm am</h2>
-		<p id="filters-display"></p>
+		<h1 id="word"></h1>
+		<p id="word-definition"></p>
 	</div>
 	<div class="page-section">
-		<h1>Results</h1>
-		<ol id="word-results">
-		</ol>
+		<canvas id="word-timeseries"></canvas>
 	</div>
 </main>
-<script src="js/data.js"></script>
-<script src="js/results.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<script src="js/data.js"></script>
+<script src="js/word.js"></script>
 </body>
 </html>
