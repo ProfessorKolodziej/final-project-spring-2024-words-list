@@ -41,6 +41,17 @@ accordionOptions.forEach((option) =>
 		const value = option.id;
 		console.log(value);
 		console.log(optionType);
+		accordionOptions.forEach((option) => {
+			console.log(option.parentElement.id, optionType);
+			if (option.parentElement.id == optionType) {
+				option.parentElement.previousElementSibling.classList.remove(
+					"active"
+				);
+				option.classList.remove("active");
+			}
+		});
+		option.parentElement.previousElementSibling.className += " active";
+		option.className += " active";
 		if (optionType == "obscurity") obscurityValue = value;
 		else if (optionType == "part-of-speech") partOfSpeechValue = value;
 		else if (optionType == "year-added") yearAddedValue = value;
@@ -60,4 +71,19 @@ searchButton.addEventListener("click", () => {
 		return;
 	}
 	window.location.href = `/results.html?obscurity=${obscurityValue}&partOfSpeech=${partOfSpeechValue}&yearAdded=${yearAddedValue}`;
+});
+
+const options = document.querySelectorAll(".accordion-option");
+
+/*Got help from ChatGPT on how to make hover features stay on click*/
+options.forEach((option) => {
+	option.addEventListener("click", function () {
+		// Remove 'active' class from all elements
+		options.forEach((el) => {
+			el.classList.remove("active");
+		});
+
+		// Add 'active' class to the clicked element
+		this.classList.add("active");
+	});
 });

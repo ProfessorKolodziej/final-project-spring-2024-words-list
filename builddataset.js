@@ -1,10 +1,10 @@
 // I got help from my brother to get data for each of my words to paste into my scripts.js file
 const words = [
-	/*"curtail",
+	"curtail",
 	"veracity",
 	"moire",
 	"philistine",
-	"inure", */
+	"inure",
 	"imperturbable",
 	"mesocarp",
 	"myriad",

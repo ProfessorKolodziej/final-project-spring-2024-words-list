@@ -18,40 +18,84 @@ to help you out.
 */
 
 /* This uses the same value as --size-xs. */
-@media screen and (width >= 320px) {
+/*@media screen and (width >= 320px) {
 	.content-container {
 		margin: 0 auto;
 		max-width: 768px;
 	}
+}
+*/
+
+@font-face {
+	font-family: 'CooperHewittBook';
+	src: url("../fonts/CooperHewitt-Book.otf") format('opentype');
+}
+
+html {
+	background-color: black;
+}
+
+body {
+	font-family: 'CooperHewittBook', sans-serif;
+	color: #fff;
+}
+
+h1 {
+	font-size: 62px;
+}
+
+h2 {
+	font-size: 24px;
 }
 
 .content-container {
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
+	padding-left: 2%;
 
 }
 
 .page-section {
 	width: 50%;
-	height: 100%;
 	margin: auto;
+	align-items: center;
+	font-family: 'CooperHewittBook', sans-serif;
+}
+
+.landing-title {
+	padding-right: 4%;
+}
+
+.left-section {
+	padding-left: 6%;
 }
 
 button {
 	font-family: "henriette-compressed", serif;
 	font-weight: 400;
 	font-style: italic;
+	font-size: 14px;
+	color: white;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 8px;
+	border-color: white;
+	padding: 5px 14px;
+	background-color: black;
+}
+
+button:hover {
+	color:black;
+	background-color: white;
 }
 
 .panel {
 	padding: 0 18px;
-	background-color: white;
 	max-height: 0;
 	overflow: hidden;
-	transition: max-height 0.2s ease-out;
+	transition: 0.2s ease-out;
  }
-
 
 
  .accordion {
@@ -59,24 +103,25 @@ button {
  }
 
  .accordion-item {
-	background-color: #fff;
 	margin-bottom: 10px;
 	padding: 10px;
-	border: 1px solid #ccc;
  }
 
  .accordion-header {
-	font-size: 18px;
-	font-weight: bold;
+	font-family: "henriette-compressed", serif;
+	font-weight: 400;
+	font-style: italic;
+	font-size: 31px;
 	cursor: pointer;
 	display: flex;
-	justify-content: space-between;
 	align-items: center;
  }
 
  .accordion-content {
 	/*display: none; */
+	color: white;
 	margin: 10px;
+	padding-left: 8%;
 	height: 0px;
 	transition: height 0.5s ease;
 	overflow: hidden;
@@ -84,22 +129,29 @@ button {
 	flex-direction: column;
  }
 
- .icon {
-	font-size: 20px;
-	margin-left: auto;
-	transform: rotate(90deg);
-	transition: all 0.2s ease;
- }
 
- .open .icon {
-	transform: rotate(0);
+ .icon {
+	width: 8.5%;
+	margin-right: 17px;
  }
 
  .accordion-option {
 	margin-bottom: 20px;
 	text-decoration: none;
+	font-size: 28px;
+	color:#fff;
  }
 
- .accordion-option a:hover {
+ .accordion-option:active,.accordion-option:hover {
 	color: #FF00FF;
+	font-family: "henriette-compressed", serif;
+	font-style: italic;
  }
+
+ .active {
+	color: #FF00FF;
+	font-family: "henriette-compressed", serif;
+	font-style: italic;
+ }
+
+
