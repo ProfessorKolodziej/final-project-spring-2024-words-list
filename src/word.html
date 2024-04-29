@@ -14,13 +14,26 @@
 </head>
 
 <body>
+	<nav class="top-nav">
+		<a class="back-arrow" href="results.html">←</a>
+		<a class="discover-new" href="index.html">DISCOVER A NEW WORD</a>
+	</nav>
 <main class="content-container">
 	<div class="page-section">
-		<h1 id="word"></h1>
-		<p id="word-definition"></p>
+		<div class="word-info">
+			<h1 id="word"></h1>
+			<p id="word-obscurity"></p>
+			<p id="word-part-of-speech"></p>
+			<p id="word-definition"></p>
+			<p id="word-examples"></p>
+			<div class="obscurity-graph">
+				<h2>Obscurity</h2>
+					<canvas id="word-timeseries"></canvas>
+			</div>
+		</div>
 	</div>
 	<div class="page-section">
-		<canvas id="word-timeseries"></canvas>
+		<img alt="Animation" id="word-animation">
 	</div>
 </main>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>

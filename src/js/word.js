@@ -11,6 +11,23 @@ const thisWordData = worddata.find((wordData) => wordData.word === word);
 const wordDefinition = document.getElementById("word-definition");
 wordDefinition.innerText = thisWordData.definition;
 
+const wordPartofSpeech = document.getElementById("word-part-of-speech");
+wordPartofSpeech.innerText = thisWordData.partOfSpeech;
+
+const wordSynonyms = document.getElementById("word-synonyms");
+wordSynonyms.innerText = thisWordData.synonyms;
+
+const wordExamples = document.getElementById("word-examples");
+wordExamples.innerText = thisWordData.examples;
+
+console.log(wordExamples);
+
+const wordEtymology = document.getElementById("word-etymology");
+wordEtymology.innerText = thisWordData.etymology;
+
+const wordObscurity = document.getElementById("word-obscurity");
+wordObscurity.innerText = thisWordData.obscurity;
+
 const buildChart = () => {
 	const canvas = document.getElementById("word-timeseries");
 	// labels are range from 2024 to 2024-n

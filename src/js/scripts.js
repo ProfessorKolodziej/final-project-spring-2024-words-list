@@ -78,12 +78,11 @@ const options = document.querySelectorAll(".accordion-option");
 /*Got help from ChatGPT on how to make hover features stay on click*/
 options.forEach((option) => {
 	option.addEventListener("click", function () {
-		// Remove 'active' class from all elements
-		options.forEach((el) => {
-			el.classList.remove("active");
-		});
-
 		// Add 'active' class to the clicked element
 		this.classList.add("active");
 	});
+});
+// Remove 'active' class from all elements
+options.forEach((el) => {
+	el.classList.remove("active");
 });

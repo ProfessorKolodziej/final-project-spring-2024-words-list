@@ -4,11 +4,11 @@ const urlParams = new URLSearchParams(window.location.search);
 
 const partOfSpeech = urlParams.get("partOfSpeech");
 const obscurity = urlParams.get("obscurity");
-const yearAdded = urlParams.get("yearAdded");
+// const yearAdded = urlParams.get("yearAdded");
 
 const filtersDisplay = document.querySelector("#filters-display");
 
-filtersDisplay.innerText = `Part of Speech: ${partOfSpeech}, Obscurity: ${obscurity}, Year Added: ${yearAdded}`;
+filtersDisplay.innerText = `Part of Speech: ${partOfSpeech}, Obscurity: ${obscurity}`;
 
 const getResults = () => {
 	const filtered = worddata.filter((word) => {

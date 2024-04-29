@@ -93,6 +93,8 @@ const worddata = [
 		examples: ["Personal freedom is curtailed in many countries"],
 		word: "curtail",
 		obscurity: "common",
+		etymology:
+			"late 15th century: from obsolete curtal ‘horse with a docked tail’, from French courtault, from court ‘short’, from Latin curtus . The change in the ending was due to association with tail1 and perhaps also with French tailler ‘to cut’.",
 	},
 	{
 		timeseries: [
