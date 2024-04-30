@@ -13,7 +13,7 @@ searchObscurity.innerText = obscurity;
 
 const getResults = () => {
 	const filtered = worddata.filter((word) => {
-		return word.partOfSpeech === partOfSpeech && word.obscurity === obscurity; // && word.yearAdded === yearAdded
+		return word.partOfSpeech === partOfSpeech && word.obscurity === obscurity;
 	});
 	return filtered;
 };
