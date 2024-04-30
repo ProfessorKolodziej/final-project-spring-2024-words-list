@@ -112,12 +112,10 @@ h1 {
 h2 {
 	font-size: 24px;
 }
-
-.content-container {
+ .content-container {
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
-
 }
 
 .page-section {
@@ -216,6 +214,19 @@ button:hover {
 	font-style: italic;
  }
 
+ /* Main page grey out */
+.unavailable {
+	color: #414141;
+}
+
+.unavailable:hover {
+	color: #414141;
+	font-style: normal;
+	font-weight: 300;
+	font-family: CooperHewitt, serif;
+	font-size: 28px;
+}
+
 
 
 /* Results page */
@@ -255,6 +266,7 @@ button:hover {
 #word-results {
 	font-size: 60px;
 	list-style-type: none;
+	padding-left: 0%;
 }
 
 #word-results a {
@@ -293,7 +305,7 @@ button:hover {
 }
 
 .word-info {
-	padding-left: 4%;
+	padding-left: 6%;
 	padding-top: 7%;
 }
 
@@ -338,21 +350,6 @@ button:hover {
 }
 
 
-/* Main page grey out */
-.unavailable {
-	color: #414141;
-}
-
-.unavailable:hover {
-	color: #414141;
-	font-style: normal;
-	font-weight: 400;
-	font-family: CooperHewitt, serif;
-	font-size: 30px;
-}
-
-
-
 /* Media queries */
 
 /* Tablet */
@@ -395,7 +392,6 @@ button:hover {
 	}
 
 	.results {
-		padding-left: 45%;
 		position: relative;
 	}
 
@@ -507,13 +503,9 @@ button:hover {
 		font-size: 18px;
 	 }
 
-	 .results {
-		padding-left: 35%;
-	 }
-
 	#word-results li {
 		font-size: 26px;
-		padding-bottom: 15%;
+		padding-bottom: 7%;
 	}
 
 	#word-results li::before {

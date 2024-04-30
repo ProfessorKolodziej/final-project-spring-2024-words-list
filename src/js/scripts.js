@@ -18,6 +18,7 @@ accordionHeader.forEach((header) =>
 		const item = header.parentElement;
 		const svgIcon = header.children.item(0);
 		const isItemOpen = item.classList.contains("open");
+		const headerAccordionType = header.nextElementSibling.id;
 		accordionItems.forEach((item1) => {
 			item1.classList.remove("open");
 			let content = Array.from(item1.children).filter((s) =>
@@ -27,8 +28,16 @@ accordionHeader.forEach((header) =>
 			let headers = Array.from(item1.children).filter((s) =>
 				s.className.includes("accordion-header")
 			)[0];
-			let svgIcon = headers.children.item(0);
-			svgIcon.src = "images/eye white.svg";
+			const thisHeaderAccordionType = headers.nextElementSibling.id;
+			if (
+				(thisHeaderAccordionType === "obscurity" &&
+					(obscurityValue === "" || obscurityValue === undefined)) ||
+				(thisHeaderAccordionType === "part-of-speech" &&
+					(partOfSpeechValue === "" || partOfSpeechValue === undefined))
+			) {
+				let svgIcon = headers.children.item(0);
+				svgIcon.src = "images/eye white.svg";
+			}
 		});
 		let content = Array.from(item.children).filter((s) =>
 			s.className.includes("accordion-content")
@@ -39,7 +48,13 @@ accordionHeader.forEach((header) =>
 			item.classList.toggle("open");
 			content.style.height = "200px";
 		} else {
-			svgIcon.src = "images/eye white.svg";
+			if (
+				(headerAccordionType === "obscurity" &&
+					(obscurityValue === "" || obscurityValue === undefined)) ||
+				(headerAccordionType === "part-of-speech" &&
+					(partOfSpeechValue === "" || partOfSpeechValue === undefined))
+			)
+				svgIcon.src = "images/eye white.svg";
 			content.style.height = "0px";
 		}
 	})
@@ -57,6 +72,7 @@ const filtersHasResults = (obFilter, posFilter) => {
 		return word.obscurity === obFilter && word.partOfSpeech === posFilter;
 	});
 };
+
 const accordionOptions = document.querySelectorAll(".accordion-option");
 accordionOptions.forEach((option) =>
 	option.addEventListener("click", () => {
@@ -72,20 +88,21 @@ accordionOptions.forEach((option) =>
 			}
 			option.classList.remove("unavailable");
 		});
-		option.parentElement.previousElementSibling.className += " active";
-		option.className += " active";
-		if (optionType == "obscurity") obscurityValue = value;
-		else if (optionType == "part-of-speech") partOfSpeechValue = value;
-		else if (optionType == "year-added") yearAddedValue = value;
-		console.log(
-			new Set(
-				worddata.map((word) => ({
-					partOfSpeech: word.partOfSpeech,
-					obscurity: word.obscurity,
-				}))
-			)
-		);
+		if (obscurityValue === value || partOfSpeechValue === value) {
+			option.parentElement.previousElementSibling.classList.remove("active");
+			option.classList.remove("active");
+
+			if (partOfSpeechValue === value) partOfSpeechValue = undefined;
+			else if (obscurityValue === value) obscurityValue = undefined;
+		} else {
+			option.parentElement.previousElementSibling.classList.add("active");
+			option.classList.add("active");
+			if (optionType == "obscurity") obscurityValue = value;
+			else if (optionType == "part-of-speech") partOfSpeechValue = value;
+			else if (optionType == "year-added") yearAddedValue = value;
+		}
 		accordionOptions.forEach((option) => {
+			option.classList.remove("unavailable");
 			const thisOptionType = option.parentElement.id;
 			if (thisOptionType === "part-of-speech" && obscurityValue) {
 				if (!filtersHasResults(obscurityValue, option.id)) {
@@ -113,19 +130,26 @@ searchButton.addEventListener("click", () => {
 
 		return;
 	}
-	window.location.href = `/results.html?obscurity=${obscurityValue}&partOfSpeech=${partOfSpeechValue}&yearAdded=${yearAddedValue}`;
+	window.location.href = `results.html?obscurity=${obscurityValue}&partOfSpeech=${partOfSpeechValue}&yearAdded=${yearAddedValue}`;
 });
 
 const options = document.querySelectorAll(".accordion-option");
 
 /*Got help from ChatGPT on how to make hover features stay on click*/
-options.forEach((option) => {
+/*options.forEach((option) => {
 	option.addEventListener("click", function () {
 		// Add 'active' class to the clicked element
 		this.classList.add("active");
 	});
-});
+});*/
 // Remove 'active' class from all elements
 options.forEach((el) => {
 	el.classList.remove("active");
 });
+
+document
+	.getElementsByClassName("back-arrow")
+	.item(0)
+	.addEventListener("click", () => {
+		window.history.back();
+	});

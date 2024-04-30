@@ -34,3 +34,10 @@ function displayResults() {
 }
 
 displayResults();
+
+document
+	.getElementsByClassName("back-arrow")
+	.item(0)
+	.addEventListener("click", () => {
+		window.history.back();
+	});
