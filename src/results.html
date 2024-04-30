@@ -17,15 +17,26 @@
 <body>
 <nav class="top-nav">
 	<a class="back-arrow" href="index.html">←</a>
+	<a class="full-list-link" href="https://camitalla.com/list" target="_blank">SEE THE FULL LIST</a>
 </nav>
 <main class="content-container">
 	<div class="page-section">
+		<div class="results-filters">
 		<h1 class="results-header">Words that match</h1>
-		<p id="filters-display"></p>
+		<ol class="word-description-list">
+			<li>
+				Part of Speech: <span id="search-part-of-speech"></span>
+			</li>
+			<li>
+				Obscurity: <span id="search-obscurity"></span>
+			</li>
+		</ol>
+	</div>
 	</div>
 	<div class="page-section">
-		<ol id="word-results">
-		</ol>
+		<div class="results">
+			<ol id="word-results"></ol>
+		</div>
 	</div>
 </main>
 <script src="js/data.js"></script>

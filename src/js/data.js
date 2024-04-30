@@ -94,7 +94,7 @@ const worddata = [
 		word: "curtail",
 		obscurity: "common",
 		etymology:
-			"late 15th century: from obsolete curtal ‘horse with a docked tail’, from French courtault, from court ‘short’, from Latin curtus . The change in the ending was due to association with tail1 and perhaps also with French tailler ‘to cut’.",
+			"Late 15th century: from obsolete curtal ‘horse with a docked tail’, from French courtault, from court ‘short’, from Latin curtus . The change in the ending was due to association with tail and perhaps also with French tailler ‘to cut’.",
 	},
 	{
 		timeseries: [
@@ -174,6 +174,8 @@ const worddata = [
 		partOfSpeech: "noun",
 		word: "veracity",
 		obscurity: "uncommon",
+		etymology:
+			"early 17th century: from French véracité or medieval Latin veracitas, from verax ‘speaking truly’",
 	},
 	{
 		timeseries: [
@@ -240,6 +242,8 @@ const worddata = [
 		partOfSpeech: "adjective",
 		word: "moire",
 		obscurity: "rare",
+		etymology:
+			"mid 17th century: French moire ‘mohair’ (the original fabric); the variant moiré ‘given a watered appearance’ (past participle of moirer, from moire ).",
 	},
 	{
 		timeseries: [
@@ -305,6 +309,8 @@ const worddata = [
 		partOfSpeech: "noun",
 		word: "philistine",
 		obscurity: "uncommon",
+		etymology:
+			"early 19th century: from Philistine, originally with reference to a confrontation between university students and townspeople in Jena, Germany, in the late 17th century; a sermon on the conflict quoted ‘the Philistines are upon you’ (Judges 16), which led to an association between the townspeople and those hostile to culture.",
 	},
 	{
 		timeseries: [
@@ -372,6 +378,8 @@ const worddata = [
 		examples: ["He was inured to the cold"],
 		word: "inure",
 		obscurity: "obscure",
+		etymology:
+			"late Middle English inure, enure, from an Anglo-Norman French phrase meaning ‘in use or practice’, from en ‘in’ + Old French euvre ‘work’ (from Latin opera ).",
 	},
 	{
 		timeseries: [
@@ -443,6 +451,8 @@ const worddata = [
 		],
 		word: "imperturbable",
 		obscurity: "rare",
+		etymology:
+			"late Middle English: from late Latin imperturbabilis, from in- ‘not’ + perturbare",
 	},
 	{
 		timeseries: [
@@ -508,6 +518,7 @@ const worddata = [
 		partOfSpeech: "noun",
 		word: "mesocarp",
 		obscurity: "obscure",
+		etymology: "A borrowing from French.",
 	},
 	{
 		timeseries: [
@@ -613,6 +624,8 @@ const worddata = [
 		examples: ["myriad stars"],
 		word: "myriad",
 		obscurity: "common",
+		etymology:
+			"mid 16th century (in myriad (sense 2 of the noun)): via late Latin from Greek murias, muriad-, from murioi ‘10,000’.",
 	},
 	{
 		timeseries: [
@@ -686,6 +699,8 @@ const worddata = [
 		partOfSpeech: "verb",
 		word: "prognosticate",
 		obscurity: "rare",
+		etymology:
+			"late Middle English: from medieval Latin prognosticat-, from the verb prognosticare ‘make a prediction’.",
 	},
 	{
 		timeseries: [
@@ -752,5 +767,7 @@ const worddata = [
 		partOfSpeech: "noun",
 		word: "sesquipedalian",
 		obscurity: "obscure",
+		etymology:
+			"mid 17th century: from Latin sesquipedalis ‘a foot and a half long’, from sesqui- (see sesqui-) + pes, ped- ‘foot’.",
 	},
 ];

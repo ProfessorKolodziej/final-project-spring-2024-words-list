@@ -16,53 +16,20 @@
 
 <body>
 	<nav class="top-nav">
+		<a class="full-list-link" href="https://camitalla.com/list" target="_blank">SEE THE FULL LIST</a>
 	</nav>
 <main class="content-container">
 	<div class="page-section">
 		<div class="landing-title">
 			<h1>
-				In 2018, I started writing down every word that I’d never heard before.
+				In 2017, I started writing down every word that I’d never heard before.
 			</h1>
-			<h2>Now, in 2024, I have 305 words.
+			<h2 class="landing-subhead" >Now, in 2024, I have 305 words.
 				<br>Here’s a visual exploration of that list.
 			</h2>
 		</div>
 	</div>
-	<!--
-			<div class="filters">
-				<div class="accordion menu">
-					<button class="accordion">EXPLORE BY OBSCURITY</button>
-					<div class="panel">
-						<option>common</option>
-						<option>uncommon</option>
-						<option>obscure</option>
-						<option>rare</option>
-					</div>
-
-					<button class="accordion">EXPLORE BY PART OF SPEECH</button>
-					<div class="panel">
-						<option>noun</option>
-						<option>adjective</option>
-						<option>verb</option>
-						<option>adverb</option>
-					</div>
-
-					<button class="accordion">EXPLORE BY YEAR FOUND</button>
-					<div class="panel">
-						<option>2018</option>
-						<option>2019</option>
-						<option>2020</option>
-						<option>2021</option>
-						<option>2022</option>
-						<option>2023</option>
-						<option>2024</option>
-					</div>
-				</div>
-			</div>
-		-->
 	<div class="page-section">
-		<div class="left-section">
-
 	<!--modified accordion code from https://www.shecodes.io/athena/9202-how-to-create-an-accordion-with-javascript-->
 		<div class="accordion">
 			<div class="accordion-item" id="accordion-1">
@@ -88,26 +55,11 @@
 					<a href="#" id="adjective" class="accordion-option">adjective</a>
 				</div>
 			</div>
-			<!-- <div class="accordion-item" id="accordion-3">
-				<div class="accordion-header">
-					<img class="icon" src="images/eye white.svg" alt="icon">
-					EXPLORE BY YEAR ADDED
-				</div>
-				<div id="year-added" class="accordion-content">
-					<a href="#" id="2018" class="accordion-option">2018</a>
-					<a href="#" id="2019" class="accordion-option">2019</a>
-					<a href="#" id="2020" class="accordion-option">2020</a>
-					<a href="#" id="2021" class="accordion-option">2021</a>
-					<a href="#" id="2022" class="accordion-option">2022</a>
-					<a href="#" id="2023" class="accordion-option">2023</a>
-					<a href="#" id="2024" class="accordion-option">2024</a>
-				</div>
-			</div>-->
 		</div>
 		<p id="error-text"></p>
-		<button id="discover-button" class="discover-button">DISCOVER</button>
-	</div>
-
+		<div class="button-container">
+			<button id="discover-button" class="discover-button">DISCOVER</button>
+		</div>
 	</div>
 
 
@@ -115,6 +67,7 @@
 <!--
 	This is where you should link your JS file.
 -->
+<script src="js/data.js"></script>
 <script src="js/scripts.js"></script>
 </body>
 

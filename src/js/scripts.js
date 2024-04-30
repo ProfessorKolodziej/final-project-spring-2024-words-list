@@ -16,6 +16,7 @@ const accordionItems = document.querySelectorAll(".accordion-item");
 accordionHeader.forEach((header) =>
 	header.addEventListener("click", () => {
 		const item = header.parentElement;
+		const svgIcon = header.children.item(0);
 		const isItemOpen = item.classList.contains("open");
 		accordionItems.forEach((item1) => {
 			item1.classList.remove("open");
@@ -23,39 +24,81 @@ accordionHeader.forEach((header) =>
 				s.className.includes("accordion-content")
 			)[0];
 			content.style.height = "0px";
+			let headers = Array.from(item1.children).filter((s) =>
+				s.className.includes("accordion-header")
+			)[0];
+			let svgIcon = headers.children.item(0);
+			svgIcon.src = "images/eye white.svg";
 		});
 		let content = Array.from(item.children).filter((s) =>
 			s.className.includes("accordion-content")
 		)[0];
 		if (!isItemOpen) {
+			svgIcon.src = "images/eye.svg";
+
 			item.classList.toggle("open");
 			content.style.height = "200px";
-		} else content.style.height = "0px";
+		} else {
+			svgIcon.src = "images/eye white.svg";
+			content.style.height = "0px";
+		}
 	})
 );
 
+const filtersHasResults = (obFilter, posFilter) => {
+	return worddata.some((word) => {
+		if (!obFilter || !posFilter) return false;
+		if (!obFilter) {
+			return word.partOfSpeech === posFilter;
+		}
+		if (!posFilter) {
+			return word.obscurity === obFilter;
+		}
+		return word.obscurity === obFilter && word.partOfSpeech === posFilter;
+	});
+};
 const accordionOptions = document.querySelectorAll(".accordion-option");
 accordionOptions.forEach((option) =>
 	option.addEventListener("click", () => {
 		const optionType = option.parentElement.id;
 		const value = option.id;
-		console.log(value);
-		console.log(optionType);
+		if (option.classList.contains("unavailable")) return;
 		accordionOptions.forEach((option) => {
-			console.log(option.parentElement.id, optionType);
 			if (option.parentElement.id == optionType) {
 				option.parentElement.previousElementSibling.classList.remove(
 					"active"
 				);
 				option.classList.remove("active");
 			}
+			option.classList.remove("unavailable");
 		});
 		option.parentElement.previousElementSibling.className += " active";
 		option.className += " active";
 		if (optionType == "obscurity") obscurityValue = value;
 		else if (optionType == "part-of-speech") partOfSpeechValue = value;
 		else if (optionType == "year-added") yearAddedValue = value;
-		console.log(obscurityValue);
+		console.log(
+			new Set(
+				worddata.map((word) => ({
+					partOfSpeech: word.partOfSpeech,
+					obscurity: word.obscurity,
+				}))
+			)
+		);
+		accordionOptions.forEach((option) => {
+			const thisOptionType = option.parentElement.id;
+			if (thisOptionType === "part-of-speech" && obscurityValue) {
+				if (!filtersHasResults(obscurityValue, option.id)) {
+					option.classList.add("unavailable");
+				}
+			}
+
+			if (thisOptionType === "obscurity" && partOfSpeechValue) {
+				if (!filtersHasResults(option.id, partOfSpeechValue)) {
+					option.classList.add("unavailable");
+				}
+			}
+		});
 	})
 );
 

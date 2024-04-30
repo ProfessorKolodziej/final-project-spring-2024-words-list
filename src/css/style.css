@@ -56,14 +56,34 @@ html {
 
 .top-nav {
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
 	position: absolute;
+	width: 97%;
+	height: 5%;
 	overflow: hidden;
 	top: 0;
 	padding-top: 0.9%;
 	padding-bottom: 0.6%;
 	padding-left: 1.5%;
+	padding-right: 1.5%;
 	z-index: 10;
 	background-color: black;
+}
+
+.top-nav a {
+	font-family: "henriette-compressed", serif;
+	font-style: italic;
+	color: white;
+	text-decoration: none;
+}
+
+.top-nav a:hover {
+	color: #FF00FF;
+}
+
+.full-list-link {
+	margin-left: auto;
 }
 
 .top-nav::after {
@@ -97,23 +117,26 @@ h2 {
 	display: flex;
 	flex-direction: row;
 	height: 100vh;
-	padding-left: 2%;
 
 }
 
 .page-section {
+	font-family: 'CooperHewitt', sans-serif;
 	width: 50%;
+	padding-left: 2%;
 	margin: auto;
 	align-items: center;
-	font-family: 'CooperHewitt', sans-serif;
+
 }
 
 .landing-title {
 	padding-right: 4%;
 }
 
-.left-section {
-	padding-left: 6%;
+.landing-subhead {
+	font-family: 'CooperHewitt', sans-serif;
+	font-weight: 300;
+	color: #fff;
 }
 
 button {
@@ -141,7 +164,6 @@ button:hover {
 	overflow: hidden;
 	transition: 0.2s ease-out;
  }
-
 
  .accordion {
 	width: 100%;
@@ -206,29 +228,29 @@ button:hover {
 
 .results-header {
 	font-size: 40px;
-	margin-bottom: 1%;
+	margin-bottom: 2%;
+	position: relative;
 }
 
 .results-header::after {
 	content: "";
-	width: 26%;
-	height: 0.1%;
+	width: 320px;
+	height: 1px;
 	display: block;
 	background: white;
 	position: absolute;
-	top: 50%;
+	left: 0;
+	bottom: 0;
+	transform: translateY(100%);
  }
 
-/*How to make filter results parts of a list*/
-#filters-display {
-	font-family: "henriette-compressed", serif;
+ .word-description-list {
+	font-family: "henriette-compressed";
 	font-style: italic;
-	color: #FF00FF;
-	font-size: 30px;
-	margin-top: 0%;
-	display: flex;
-	flex-direction: row;
-}
+	padding-left: 0px;
+	margin-top: 1%;
+
+ }
 
 #word-results {
 	font-size: 60px;
@@ -261,22 +283,235 @@ button:hover {
 	height: 50%;
 }
 
-.word-bottom-section {
+
+/* Word page */
+.word-info {
+	padding-top: 7%;
+	padding-left: 2%;
+
+}
+
+.word-header {
 	display: flex;
 	flex-direction: row;
-	width: 100%;
+	align-items: center;
+}
+
+.word-info-item {
+	margin-top: 0%;
+	margin-bottom: 7%;
+}
+
+#word {
+	margin-top: 0%;
+	margin-bottom: 1%;
+}
+
+#word-definition {
+	margin-top:1%;
+}
+
+#word-part-of-speech {
+	font-size: 20px;
+	padding-left: 1%;
+	color:#FF00FF;
+	margin-top: 0%;
+	margin-bottom: 1%;
 }
 
 #word-timeseries {
-	width: 100%;
+	width:80% !important;
+	height: 40% !important;
+}
+
+.animation-container {
+	/* margin: auto;
+	width: 100%; */
+	width: 130vw;
+	height: 100vw;
+	position: relative;
 }
 
 
-/* Word page */
+/* Main page grey out */
+.unavailable {
+	color: #414141;
+}
 
-.discover-new {
-	font-family: "henriette-compressed", serif;
-	font-style: italic;
-	color: white;
-	text-decoration: none;
+.unavailable:hover {
+	color: #414141;
+	font-style: normal;
+	font-weight: 400;
+	font-family: CooperHewitt, serif;
+	font-size: 30px;
+}
+
+
+
+/* Media queries */
+
+/* Tablet */
+@media screen and (width <= 768px) {
+
+	/* Landing/general */
+	h1 {
+		font-size: 46px;
+	}
+
+	h2 {
+		font-size: 24px;
+	}
+
+	p {
+		font-size: 17px;
+	}
+
+	.content-container {
+		flex-direction: column;
+	}
+
+	.page-section {
+		width: 95%;
+		margin-top: 7%;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+
+	.button-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		text-align: center;
+		 margin-bottom: 20%;
+	}
+
+	/* Results */
+	.results-header {
+		margin-bottom: 1%;
+	}
+
+	.results {
+		padding-left: 45%;
+		position: relative;
+	}
+
+	#word-results li::before {
+		content: "→";
+		font-size: 24px;
+		padding-right: 10px;
+	}
+
+	/* Words */
+	.word-info {
+		display: flex;
+		flex: column;
+	}
+
+	.animation-container {
+		order: 1;
+	}
+
+	.word-info {
+		order: 2;
+	}
+
+	.written-word-info,
+	 .obscurity-graph {
+		padding-left: 5%;
+	}
+
+	.word-header {
+		margin-top: 3%;
+	}
+
+}
+
+
+/*Mobile*/
+@media screen and (width <= 320px) {
+
+	/* Landing/general */
+	h1 {
+		font-size: 28px;
+	}
+
+	h2 {
+		font-size: 11px;
+	}
+
+	p {
+		font-size: 13px;
+	}
+
+	.full-list-link {
+		font-size: 14px;
+	}
+
+	.page-section {
+		margin-bottom: 7%;
+	}
+
+	.landing-title {
+		padding-top: 10%;
+	}
+
+	.accordion-header {
+		font-size: 18px;
+	}
+
+	.accordion-option {
+		font-size: 16px;
+	}
+
+	.accordion-option:active,.accordion-option:hover, .active {
+		font-size: 20px;
+	 }
+
+	/* Results */
+	.results-header {
+		font-size: 22px;
+		margin-bottom: 3%;
+	 }
+
+	 .results-header::after {
+		width: 175px;
+	 }
+
+	.page-section h1:first-of-type {
+			margin-top: 20%;
+		}
+
+	.word-description-list {
+		font-size: 18px;
+	 }
+
+	#word-results li {
+		font-size: 26px;
+		padding-bottom: 15%;
+	}
+
+	#word-results li::before {
+		font-size: 14px;
+	}
+
+	/* Words */
+	.word-info {
+		display: grid;
+		padding-right: 3%;
+	}
+
+	.word-info-item h2 {
+		font-size: 16px;
+	}
+
+	#word-part-of-speech {
+		font-size: 14px;
+		padding-left: 2%;
+	}
+
+	#word-timeseries {
+		width: 90% !important;
+		height: 45% !important;
+	}
+
 }

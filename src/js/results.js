@@ -6,9 +6,10 @@ const partOfSpeech = urlParams.get("partOfSpeech");
 const obscurity = urlParams.get("obscurity");
 // const yearAdded = urlParams.get("yearAdded");
 
-const filtersDisplay = document.querySelector("#filters-display");
-
-filtersDisplay.innerText = `Part of Speech: ${partOfSpeech}, Obscurity: ${obscurity}`;
+const searchPartOfSpeech = document.getElementById("search-part-of-speech");
+const searchObscurity = document.getElementById("search-obscurity");
+searchPartOfSpeech.innerText = partOfSpeech;
+searchObscurity.innerText = obscurity;
 
 const getResults = () => {
 	const filtered = worddata.filter((word) => {
