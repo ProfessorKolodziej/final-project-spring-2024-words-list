@@ -379,7 +379,6 @@ button:hover {
 		width: 95%;
 		margin-top: 7%;
 		padding-left: 5%;
-		padding-right: 5%;
 	}
 
 	.button-container {
@@ -426,8 +425,7 @@ button:hover {
 		width: 300%;
 		height: 100%;
 		object-fit: cover;
-		object-position: center;
-		transform: translateY(30px);
+		object-position:center calc(50% + 10px);
 	}
 
 	.word-header {
