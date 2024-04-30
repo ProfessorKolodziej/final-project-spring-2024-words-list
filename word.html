@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Update your description here"/>
+	<title>Curious Words Results</title>
+	<!--
+		This is where you should link your CSS file.
+	-->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/czn3yyd.css">
+</head>
+
+<body>
+<nav class="top-nav">
+	<a class="back-arrow" href="#">←</a>
+	<a class="full-list-link" href="https://camitalla.com/list" target="_blank">SEE THE FULL LIST</a>
+</nav>
+<main class="content-container">
+	<div class="word-info">
+		<div class="written-word-info">
+			<div class="word-info-item">
+				<div class="word-header">
+					<h1 id="word"></h1>
+					<p id="word-part-of-speech"></p>
+				</div>
+					<p id="word-definition"></p>
+				</div>
+			<div class="word-info-item">
+				<h2>Origin</h2>
+				<p id="word-etymology"></p>
+			</div>
+		</div>
+		<div class="obscurity-graph">
+			<div class="word-info-item">
+				<h2>
+					Obscurity: <span id="word-obscurity"></span>
+				</h2>
+					<canvas id="word-timeseries"></canvas>
+				</div>
+			</div>
+		</div>
+	<div class="animation-container">
+		<img alt="Animation" id="word-animation">
+	</div>
+</main>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="js/data.js"></script>
+<script src="js/word.js"></script>
+</body>
+</html>

@@ -1,1 +1,74 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="Update your description here"/><title>Update your title here</title><link rel="shortcut icon" href="/images/favicons/favicon.ico"><link rel="icon" type="image/png" sizes="16x16" href="/images/favicons/favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="/images/favicons/favicon-32x32.png"><link rel="manifest" href="/images/favicons/manifest.json"><meta name="mobile-web-app-capable" content="yes"><meta name="theme-color" content="#fff"><meta name="application-name" content="Student Site Boilerplate"><link rel="apple-touch-icon" sizes="57x57" href="/images/favicons/apple-touch-icon-57x57.png"><link rel="apple-touch-icon" sizes="60x60" href="/images/favicons/apple-touch-icon-60x60.png"><link rel="apple-touch-icon" sizes="72x72" href="/images/favicons/apple-touch-icon-72x72.png"><link rel="apple-touch-icon" sizes="76x76" href="/images/favicons/apple-touch-icon-76x76.png"><link rel="apple-touch-icon" sizes="114x114" href="/images/favicons/apple-touch-icon-114x114.png"><link rel="apple-touch-icon" sizes="120x120" href="/images/favicons/apple-touch-icon-120x120.png"><link rel="apple-touch-icon" sizes="144x144" href="/images/favicons/apple-touch-icon-144x144.png"><link rel="apple-touch-icon" sizes="152x152" href="/images/favicons/apple-touch-icon-152x152.png"><link rel="apple-touch-icon" sizes="167x167" href="/images/favicons/apple-touch-icon-167x167.png"><link rel="apple-touch-icon" sizes="180x180" href="/images/favicons/apple-touch-icon-180x180.png"><link rel="apple-touch-icon" sizes="1024x1024" href="/images/favicons/apple-touch-icon-1024x1024.png"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="apple-mobile-web-app-title" content="Student Site Boilerplate"><meta name="viewport" content="width=device-width,initial-scale=1"><link href="style.a7c01fe86505acb54447.css" rel="stylesheet"></head><body><main class="content-container"><h1 class="page-heading">Welcome to your final project!</h1></main><script src="main.f0ea4228673b4ac65ea8.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Update your description here"/>
+	<title>Curious Words</title>
+	<!--
+		This is where you should link your CSS file.
+	-->
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="https://use.typekit.net/czn3yyd.css">
+</head>
+
+<body>
+	<nav class="top-nav">
+		<a class="full-list-link" href="https://camitalla.com/list" target="_blank">SEE THE FULL LIST</a>
+	</nav>
+<main class="content-container">
+	<div class="page-section">
+		<div class="landing-title">
+			<h1>
+				In 2017, I started writing down every word that I’d never heard before.
+			</h1>
+			<h2 class="landing-subhead" >Now, in 2024, I have 305 words.
+				<br>Here’s a visual exploration of that list.
+			</h2>
+		</div>
+	</div>
+	<div class="page-section">
+	<!--modified accordion code from https://www.shecodes.io/athena/9202-how-to-create-an-accordion-with-javascript-->
+		<div class="accordion">
+			<div class="accordion-item" id="accordion-1">
+				<div class="accordion-header">
+					<img class="icon" src="images/eye white.svg" alt="icon">
+					EXPLORE BY OBSCURITY
+				</div>
+				<div class="accordion-content" id="obscurity">
+					<a href="#" id="common" class="accordion-option">common</a>
+					<a href="#" id="uncommon" class="accordion-option">uncommon</a>
+					<a href="#" id="obscure" class="accordion-option">obscure</a>
+					<a href="#" id="rare" class="accordion-option">rare</a>
+				</div>
+			</div>
+			<div class="accordion-item" id="accordion-2">
+				<div class="accordion-header">
+					<img class="icon" src="images/eye white.svg" alt="icon">
+					EXPLORE BY PART OF SPEECH
+				</div>
+				<div id="part-of-speech" class="accordion-content">
+					<a href="#" id="noun" class="accordion-option">noun</a>
+					<a href="#" id="verb" class="accordion-option">verb</a>
+					<a href="#" id="adjective" class="accordion-option">adjective</a>
+				</div>
+			</div>
+		</div>
+		<p id="error-text"></p>
+		<div class="button-container">
+			<button id="discover-button" class="discover-button">DISCOVER</button>
+		</div>
+	</div>
+
+
+</main>
+<!--
+	This is where you should link your JS file.
+-->
+<script src="js/data.js"></script>
+<script src="js/scripts.js"></script>
+</body>
+
+</html>
